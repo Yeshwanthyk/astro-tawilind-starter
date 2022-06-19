@@ -1,0 +1,17 @@
+---
+import BlogPost from '@components/BlogPost.jsx'
+
+const posts = await Astro.glob("../../data/*.md");
+---
+
+<div class="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16 mt-4">
+        <h1 class="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl ">
+          Blog
+        </h1>
+	<h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl ">
+		All Posts
+	      </h3>
+	      {posts.map((post) => (
+		<BlogPost title={post.frontmatter.title} description={post.frontmatter.description} slug={post.frontmatter.slug}/>
+	      ))}
+</div>

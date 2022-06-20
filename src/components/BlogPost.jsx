@@ -2,16 +2,16 @@ import React from "react";
 
 const BlogPost = ({ title, description, slug }) => {
   return (
-    <a class="w-full" href={`/blog/${slug}`}>
-      <div class="w-full mb-8">
-        <div class="flex flex-col justify-between md:flex-row">
+    <div class="w-full mb-8">
+      <div class="flex flex-col justify-between md:flex-row">
+        <a class="decoration-sky-700" href={`/blog/${slug}`}>
           <h4 class="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl ">
             {title}
           </h4>
-        </div>
-        <p class="text-gray-600 dark:text-gray-400">{description}</p>
+        </a>
       </div>
-    </a>
+      <p class="text-gray-600 dark:text-gray-400">{description}</p>
+    </div>
   );
 };
 

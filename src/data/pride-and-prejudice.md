@@ -2,10 +2,10 @@
 title: Pride and Prejudice
 slug: pride-n-prejudice
 date: 2022-06-01
-description: Chapters from pride and prejudice
+description: by Jane Austen
 ---
 
-## Chapter 1
+#### Chapter 1
 
 It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.
 

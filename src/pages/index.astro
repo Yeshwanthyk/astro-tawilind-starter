@@ -1,18 +1,32 @@
 ---
-import BlogPost from '@components/BlogPost.jsx'
+import BlogPost from "@components/BlogPost.jsx";
 import Container from "@layouts/ContainerLayout.astro";
 
 const posts = await Astro.glob("../data/*.md");
+
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime()
+);
 ---
 
 <Container>
   <div class="flex flex-col items-start max-w-2xl mx-auto mb-16 mt-4">
-		<h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl ">
-			Lastest Posts
-		</h3>
-		{posts.slice(0, 3).map((post) => (
-			<BlogPost title={post.frontmatter.title} description={post.frontmatter.description} slug={post.frontmatter.slug}/>
-		))}
-    <a href="/blog">{`---> see all posts`}</a>
-	</div>
+    <h3
+      class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl "
+    >
+      Lastest Posts
+    </h3>
+    {sortedPosts
+      .slice(0, 2)
+      .map((post) => (
+        <BlogPost
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          slug={post.frontmatter.slug}
+        />
+      ))}
+    <a href="/blog/1">{`👉 see all posts 🌈`}</a>
+  </div>
 </Container>

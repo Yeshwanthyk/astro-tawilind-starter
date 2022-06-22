@@ -1,7 +1,8 @@
 ---
 title: Pride and Prejudice
-description: Chapters from pride and prejudice
 slug: pride-n-prejudice
+date: 2022-06-01
+description: Chapters from pride and prejudice
 ---
 
 ## Chapter 1

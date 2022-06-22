@@ -1,7 +1,8 @@
 ---
-title: Moby Dick 
-description: Chapter 1 - Loomings
+title: Moby Dick
 slug: moby-dick
+date: 2022-06-05
+description: Chapter 1 - Loomings
 ---
 
 ## CHAPTER 1: Loomings

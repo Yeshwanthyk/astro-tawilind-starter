@@ -3,7 +3,7 @@ import BlogPost from "@components/BlogPost.jsx";
 import Container from "@layouts/ContainerLayout.astro";
 
 export async function getStaticPaths({ paginate }) {
-  const posts = await Astro.glob("../../data/*.md");
+  const posts = await Astro.glob("../../../data/*.md");
   const sortedPosts = posts.sort(
     (a, b) =>
       new Date(b.frontmatter.date).getTime() -

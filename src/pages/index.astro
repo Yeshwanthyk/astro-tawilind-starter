@@ -1,7 +1,18 @@
 ---
+import BlogPost from '@components/BlogPost.jsx'
 import Container from "@layouts/ContainerLayout.astro";
+
+const posts = await Astro.glob("../data/*.md");
 ---
 
 <Container>
-  <img class="object-fit max-w-2xl mx-auto" src="./main-hero.jpeg" alt="" />
+  <div class="flex flex-col items-start max-w-2xl mx-auto mb-16 mt-4">
+		<h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl ">
+			Lastest Posts
+		</h3>
+		{posts.slice(0, 3).map((post) => (
+			<BlogPost title={post.frontmatter.title} description={post.frontmatter.description} slug={post.frontmatter.slug}/>
+		))}
+    <a href="/blog">{`---> see all posts`}</a>
+	</div>
 </Container>
